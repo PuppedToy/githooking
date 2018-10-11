@@ -4,7 +4,7 @@ files=$(ls *.rndtxt 2> /dev/null)
 rndn=$RANDOM
 let "rndn %= 4"
 
-if [ "$1" == "-m" ]; then
+if [ "$1" == "-m" ] || [ "$1" == "-c" ]; then
 	rndn=0
 elif [ "$1" == "-n" ]; then
 	rndn=3
@@ -23,7 +23,15 @@ else
 	echo $(node add_random_change) > $new
 	echo "Created file: $new"
 fi
-	
 
+ncommit=$(cat .autocommit)
+
+if [ "$1" == "-c" ]; then
+	git commit -a -m "AutoCommit #$ncommit"
+fi
+
+((ncommit++))
+
+echo -n $ncommit > .autocommit
 
 exit 0
