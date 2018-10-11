@@ -10,8 +10,6 @@ elif [ "$1" == "-n" ]; then
 	rndn=3
 fi
 
-echo $rndn
-
 if [ "$files" != "" ] && [ $rndn -le 2 ]; then
 	nfiles=$(echo $files | wc -w | xargs)
 	rndn=$RANDOM
