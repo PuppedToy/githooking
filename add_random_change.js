@@ -1,4 +1,4 @@
-const abc = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789@$_-.\'"^?¿!'.split("");
+const abc = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789'.split("");
 let res = "";
 
 const amount = process.argv[2] || 50;
